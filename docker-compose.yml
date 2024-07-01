@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: lizit
+      POSTGRES_USER: lizit
+      POSTGRES_PASSWORD: l1z1t4dm1n
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
