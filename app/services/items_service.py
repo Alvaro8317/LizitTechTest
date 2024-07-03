@@ -9,8 +9,8 @@ class ItemService:
         self.item_repository = ItemRepository(db)
 
     def create_item(self, item: ItemSchemaCreate):
-        item = ItemModel(**item.model_dump())
-        result = self.item_repository.create_item(item)
+        item_to_process = ItemModel(**item.model_dump())
+        result = self.item_repository.create_item(item_to_process)
         if not result:
             return {"message": "Item already exists"}
         return item
